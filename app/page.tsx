@@ -3,15 +3,19 @@ import Image from "next/image";
 import './page.scss';
 import React, { useState } from "react";
 import dynamic from 'next/dynamic';
+import FileConverter from "./Components/fileConverter/fileConverter";
+import NavBar from "./Components/navBar/navBar";
+import { Col, Row } from 'antd';
+
 
 function Home() {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
-  
-  const handleImageChange = (event:any) => {
+
+  const handleImageChange = (event: any) => {
     const file = event.target.files[0];
     if (file && file.type === "image/jpeg") {
-      const reader:any = new FileReader();
+      const reader: any = new FileReader();
       reader.onload = () => {
         setPreview(reader.result);
         setImage(file);
@@ -25,8 +29,8 @@ function Home() {
   const convertToPNG = () => {
     if (!image) return;
 
-    const img:any = document.createElement('img');
-    if(img){
+    const img: any = document.createElement('img');
+    if (img) {
       img.src = preview;
       img.onload = () => {
         const canvas = document.createElement("canvas");
@@ -34,7 +38,7 @@ function Home() {
         canvas.height = img.height;
         const ctx = canvas.getContext("2d")!;
         ctx.drawImage(img, 0, 0);
-        
+
         const pngUrl = canvas.toDataURL("image/png");
         const link = document.createElement("a");
         link.href = pngUrl;
@@ -47,7 +51,7 @@ function Home() {
   };
   return (
     <div className="home" >
-      <div className="">
+      {/* <div className="">
       <h1 className="">JPG to PNG Converter</h1>
       <input type="file" accept="image/jpeg" onChange={handleImageChange} />
       {preview && <img src={preview} alt="Preview" className="" />}
@@ -58,7 +62,15 @@ function Home() {
       >
         Convert to PNG
       </button>
-    </div>
+    </div> */}
+      <NavBar />
+
+      <Row className="file_converter_container_row">
+        <Col span={16}>
+          <FileConverter />
+        </Col>
+      </Row>
+      
     </div>
   );
 }
