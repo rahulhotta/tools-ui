@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import FileConverter from "./Components/fileConverter/fileConverter";
 import NavBar from "./Components/navBar/navBar";
 import { Col, Row } from 'antd';
-
+import Loader from "./Service/Loader/Loader";
 
 function Home() {
   const [image, setImage] = useState(null);
@@ -51,20 +51,8 @@ function Home() {
   };
   return (
     <div className="home" >
-      {/* <div className="">
-      <h1 className="">JPG to PNG Converter</h1>
-      <input type="file" accept="image/jpeg" onChange={handleImageChange} />
-      {preview && <img src={preview} alt="Preview" className="" />}
-      <button 
-        className="" 
-        onClick={convertToPNG}
-        disabled={!image}
-      >
-        Convert to PNG
-      </button>
-    </div> */}
+      <Loader />
       <NavBar />
-
       <Row className="file_converter_container_row">
         <Col span={16}>
           <FileConverter />
