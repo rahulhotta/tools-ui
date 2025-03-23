@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import FileConverter from "./Components/fileConverter/fileConverter";
 import NavBar from "./Components/navBar/navBar";
 import { Col, Row } from 'antd';
-import Loader from "./Service/Loader/Loader";
+import Loader from "./Utils/Services/Loader/Loader";
 
 function Home() {
   const [image, setImage] = useState(null);
