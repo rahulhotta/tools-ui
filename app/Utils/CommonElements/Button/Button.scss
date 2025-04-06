@@ -1,0 +1,19 @@
+@use '../../../variables.scss' as vars;
+
+.dynamic_button{
+    background-color: vars.$secondary_color;
+    border: 1px solid vars.$secondary_color;
+    color: vars.$primary_color;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #323232;
+    box-shadow: 3px 3px #323232;
+    cursor: pointer;
+}
+.dynamic_button:hover{
+    cursor: pointer;
+}
+.dynamic_button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}

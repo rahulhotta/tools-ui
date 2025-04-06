@@ -22,3 +22,8 @@ body{
   align-items: center;
   justify-content: center;
 }
+
+.ant-select-selector {
+  background-color: white !important; 
+  border: 1.5px solid vars.$secondary_color !important;
+}
