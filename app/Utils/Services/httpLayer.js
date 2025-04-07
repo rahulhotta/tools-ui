@@ -5,8 +5,6 @@ import { store } from '../Redux/Store';
 import { showLoader, hideLoader } from '../Redux/loaderSlice';
 
 
-console.log("store: ",store);
-console.log("ShowLoader: ",showLoader)
 // Request interceptor to show loader
 axios.interceptors.request.use(
   (config) => {

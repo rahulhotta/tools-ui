@@ -16,7 +16,17 @@
 body{
   background-color: vars.$base_color;
   color: vars.$primary_color;
+  background-image: url('../public//Images/cool-background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+
+
+
+
+
 .file_converter_container_row{
   display: flex;
   align-items: center;

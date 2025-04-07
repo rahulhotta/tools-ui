@@ -10,7 +10,6 @@ import ExtensionSelector from './ExtensionSelector/extensionSelector';
 function FileConverter() {
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
-    console.log('image', image)
     const handleImageChange = (event: any) => {
         const file = event.target.files[0];
 
@@ -30,7 +29,6 @@ function FileConverter() {
 
             reader.onload = () => {
                 const fileContent = reader.result;
-                console.log('File content:', fileContent);
             };
 
             reader.readAsText(file);
