@@ -16,11 +16,16 @@
 body{
   background-color: vars.$base_color;
   color: vars.$primary_color;
-  background-image: url('../public//Images/cool-background.svg');
+  background-image: url('../public/Images/slanted-gradient.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  min-height: 100vh;
+  width: 100vw;
 }
+
+
+
 
 
 

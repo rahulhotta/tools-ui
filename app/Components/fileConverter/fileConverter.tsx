@@ -10,6 +10,7 @@ import ExtensionSelector from './ExtensionSelector/extensionSelector';
 function FileConverter() {
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
+    console.log('image', image)
     const handleImageChange = (event: any) => {
         const file = event.target.files[0];
 
@@ -23,15 +24,17 @@ function FileConverter() {
     };
 
     const onDrop = useCallback((acceptedFiles: any) => {
-        // Handle the uploaded files here
         acceptedFiles.forEach((file: any) => {
-            const reader = new FileReader();
-
+            const reader: any = new FileReader();
+    
             reader.onload = () => {
                 const fileContent = reader.result;
+                console.log('File content (data URL):', fileContent);
+                setPreview(fileContent); // This will be a base64 image now
+                setImage(file);
             };
-
-            reader.readAsText(file);
+    
+            reader.readAsDataURL(file); // 
         });
     }, []);
 
