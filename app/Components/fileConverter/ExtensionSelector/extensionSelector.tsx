@@ -89,7 +89,7 @@ const ExtensionSelector: React.FC<ExtensionSelectorProps> = ({ image, setImage, 
                 <CommonCard>
                     <Row className='extension_selector_div'>
 
-                        <Col span={8} data-testid="column-antd">
+                        <Col span={8} xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 8 }} data-testid="column-antd">
                             <div className='extension_selector_image_name'>
                                 {truncateMiddle(image?.name)}
                             </div>
@@ -98,7 +98,7 @@ const ExtensionSelector: React.FC<ExtensionSelectorProps> = ({ image, setImage, 
                             </div>
                         </Col>
 
-                        <Col span={8} className='extension_selector_file_convert_select_container'>
+                        <Col span={8} xs={{ span: 24 }} sm={{ span: 20 }} md={{ span: 20 }} lg={{ span: 8 }}className='extension_selector_file_convert_select_container'>
                             <div>
                                 Convert To:
                             </div>
@@ -121,7 +121,7 @@ const ExtensionSelector: React.FC<ExtensionSelectorProps> = ({ image, setImage, 
                         </Col>
 
 
-                        <Col span={8} className='extension_selector_file_convert_button_container'>
+                        <Col span={8} xs={{ span: 24 }} sm={{ span: 4 }} md={{ span: 4 }} lg={{ span: 8 }}className='extension_selector_file_convert_button_container'>
                             <Button type="submit">Convert</Button>
                         </Col>
                     </Row>

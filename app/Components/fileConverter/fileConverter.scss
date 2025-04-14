@@ -19,7 +19,7 @@
         filter: drop-shadow(0 0 0.75rem gray);
     }
     h1{
-        width: clamp(300px, 40vw, 600px);
+        width: clamp(300px, 90vw, 600px);
         min-height: 40vh;
         display: flex;
         align-items: center;
@@ -29,3 +29,10 @@
         padding-right: 5vw;
     }
 }
+
+/* For tablets and smaller (max-width: 870px) */
+@media (max-width: 870px) {
+    .fileConverter_banner_image{
+        display: none;
+    }
+  }

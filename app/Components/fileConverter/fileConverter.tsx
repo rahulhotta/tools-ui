@@ -54,7 +54,11 @@ function FileConverter() {
                         CONVERT YOUR FILES FROM ONE FORMAT TO ANOTHER, ONLINE.
                     </h1>
                 </Col>
-                <Col span={16}>
+                <Col span={16} xs={{ span: 23 }}
+                    sm={{ span: 23 }}
+                    md={{ span: 22 }}
+                    lg={{ span: 16 }}
+                    >
                     {!image ?
                         // To upload image show this
                         (
