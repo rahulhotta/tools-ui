@@ -1,6 +1,6 @@
 import React from 'react'
 import './navBar.scss';
-import CommonCard from '@/app/Utils/CommonElements/Card/Card';
+import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
 function NavBar() {
   return (
     <div className='nav_bar_container'>

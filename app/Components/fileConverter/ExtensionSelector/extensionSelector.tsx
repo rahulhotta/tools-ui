@@ -5,7 +5,7 @@ import Button from '@/app/Utils/CommonElements/Button/Button';
 import { log } from 'node:console';
 import { Select } from 'antd';
 import { Checkbox, Form, Input } from 'antd';
-import CommonCard from '@/app/Utils/CommonElements/Card/Card';
+import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
 interface ExtensionSelectorProps {
     image: any;
     preview: any;

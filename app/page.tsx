@@ -54,7 +54,7 @@ function Home() {
       <Loader />
       <NavBar />
       <Row className="file_converter_container_row">
-        <Col span={16}>
+        <Col span={24}>
           <FileConverter />
         </Col>
       </Row>

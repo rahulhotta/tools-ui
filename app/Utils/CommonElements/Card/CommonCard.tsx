@@ -1,5 +1,5 @@
 import React from 'react'
-import './Card.scss'
+import './CommonCard.scss'
 interface proprsType {
   children: any,
   height?:string,

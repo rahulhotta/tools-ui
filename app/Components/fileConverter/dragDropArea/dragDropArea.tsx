@@ -3,7 +3,7 @@ import './dragDropArea.scss';
 import { Col, Row } from 'antd';
 import { useDropzone } from 'react-dropzone';
 import Button from '../../../Utils/CommonElements/Button/Button';
-import CommonCard from '@/app/Utils/CommonElements/Card/Card';
+import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
 function DragDropArea({ handleImageChange, onDrop }: any) {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
     return (
