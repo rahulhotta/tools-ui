@@ -7,7 +7,7 @@ import FileConverter from "./Components/fileConverter/fileConverter";
 import NavBar from "./Components/navBar/navBar";
 import { Col, Row } from 'antd';
 import Loader from "./Utils/Services/Loader/Loader";
-
+import LandingPage from './Components/Landing-page/LandingPage'
 function Home() {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -58,7 +58,7 @@ function Home() {
           <FileConverter />
         </Col>
       </Row>
-      
+      {/* <LandingPage /> */}
     </div>
   );
 }
