@@ -109,7 +109,7 @@ const ExtensionSelector: React.FC<ExtensionSelectorProps> = ({ image, setImage, 
                                 rules={[{ required: true, message: 'Please input your username!' }]}  >
                                 <Select
                                     showSearch
-                                    placeholder="Select a person"
+                                    placeholder="Select a Type"
                                     optionFilterProp="label"
                                     style={{ width: '90%' }}
                                     className='extension_selector_SelectMenu'

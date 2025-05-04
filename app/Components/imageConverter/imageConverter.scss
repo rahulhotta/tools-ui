@@ -1,5 +1,16 @@
 @use '../../variables.scss' as vars;
 
+
+.fileConverter_container{
+    // background-image: url('../../../public/Images/slanted-gradient_2.png');
+    background-image: url('../../../public/Images/cornered-stairs.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100vw;
+}
 .display_flex{
     display: flex;
     align-items: center;
@@ -18,8 +29,9 @@
         left: 10vw;
         filter: drop-shadow(0 0 0.75rem gray);
     }
-    h1{
-        width: clamp(300px, 90vw, 600px);
+    .file_converter_heading{
+        // width: clamp(300px, 90vw, 600px);
+        width: 100%;
         min-height: 40vh;
         display: flex;
         align-items: center;
@@ -32,7 +44,15 @@
 
 /* For tablets and smaller (max-width: 870px) */
 @media (max-width: 870px) {
+    .fileConverter_banner{
+        padding-top: 50px;
+    }
     .fileConverter_banner_image{
         display: none;
+    }
+    .file_converter_heading{
+        font-size: 2.1rem !important;
+        text-align: center !important;
+        width: 100% !important;
     }
   }

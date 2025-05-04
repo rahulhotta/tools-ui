@@ -1,14 +1,14 @@
+'use client'
 import React, { useCallback, useState } from 'react';
-import './fileConverter.scss';
 import Image from 'next/image';
+import './imageConverter.scss';
 import littleToolsBanner from '../../../public/Images/fileConverterLandingPageImage2.png';
 import { Col, Row } from 'antd';
 import { useDropzone } from 'react-dropzone';
 import DragDropArea from './dragDropArea/dragDropArea';
 import ExtensionSelector from './ExtensionSelector/extensionSelector';
-import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
 
-function FileConverter() {
+function ImageConverter() {
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
     console.log('image', image)
@@ -23,7 +23,6 @@ function FileConverter() {
         reader.readAsDataURL(file);
 
     };
-
     const onDrop = useCallback((acceptedFiles: any) => {
         acceptedFiles.forEach((file: any) => {
             const reader: any = new FileReader();
@@ -39,18 +38,14 @@ function FileConverter() {
         });
     }, []);
 
-    // const resetSelectedFile = () => {
-    //     setImage(null);
-    //     console.log(image)
-    // }
     return (
-        <div>
+        <div className='fileConverter_container'>
             <Row className='display_flex'>
                 <Col className='fileConverter_banner display_flex' span={24}>
-                    <div>
+                    {/* <div>
                         <Image src={littleToolsBanner} alt='little tools landing page banner' className='fileConverter_banner_image' />
-                    </div>
-                    <h1>
+                    </div> */}
+                    <h1 className='file_converter_heading'>
                         CONVERT YOUR FILES FROM ONE FORMAT TO ANOTHER, ONLINE.
                     </h1>
                 </Col>
@@ -77,4 +72,4 @@ function FileConverter() {
     )
 }
 
-export default FileConverter
+export default ImageConverter
