@@ -12,7 +12,7 @@ const loaderSlice = createSlice({
             state.isLoading = true
         },
         hideLoader : (state) => {
-            state.isLoading = falsep
+            state.isLoading = false
         }
     }
 });

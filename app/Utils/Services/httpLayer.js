@@ -1,7 +1,7 @@
 // utils/http.js
 import {Environments} from '../Environments/Environments'
 import axios from 'axios';
-import { store } from '../Redux/Store';
+import { store } from '../Redux/store';
 import { showLoader, hideLoader } from '../Redux/loaderSlice';
 
 

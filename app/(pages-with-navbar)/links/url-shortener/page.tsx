@@ -8,7 +8,24 @@ import Button from '@/app/Utils/CommonElements/Button/Button';
 import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
 import { MdContentCopy } from "react-icons/md";
 import toast, { Toaster } from 'react-hot-toast';
+import {ServiceUtils} from '../../../Utils/Services/httpLayer'
 const page = () => {
+
+  const randomAPICall = (inputJson:any) => {
+    try{
+      let payload = {
+        "main_url": inputJson['URL'],
+        "expire_in_days": inputJson['expiry_date']
+      }
+      ServiceUtils.postRequest("/s/submit_url",payload).then((_response:any) => {
+        if (_response && _response.status === 200) {
+          console.log(_response)
+        }
+      })
+    }catch(error){
+      console.log(error)
+    }
+  }
   const inputRef:any = useRef(null);
   const handleCopy = async () => {
     const inputValue = inputRef.current?.input?.value;
@@ -28,16 +45,16 @@ const page = () => {
   };
   type FieldType = {
     URL?: string;
-    expiry_date?: string;
-    remember?: string;
+    expiry_date?: Number;
   };
-  const options: CheckboxGroupProps<string>['options'] = [
-    { label: '1 Day', value: '1_day' },
-    { label: '3 Days', value: '3_days' },
-    { label: '7 Days', value: '7_days' },
+  const options: CheckboxGroupProps<Number>['options'] = [
+    { label: '1 Day', value: 1 },
+    { label: '3 Days', value: 3},
+    { label: '7 Days', value: 7 },
   ];
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-    console.log("values: ", values)
+    console.log("values: ", values);
+    randomAPICall(values);
   }
   return (
     <div className='url_shortener_page_container'>
@@ -92,7 +109,7 @@ const page = () => {
         <CommonCard>
           <div className='copy_container'>
             <Space.Compact style={{ width: '100%' }}>
-              <Input className='copy_input' placeholder='Copy URL'  defaultValue={'hello'} ref={inputRef}/>
+              <Input className='copy_input' placeholder='Copy URL' disabled  defaultValue={'hello'} ref={inputRef}/>
 
               <Tooltip placement="top" title={'Copy'}>
                 <Button onClick={handleCopy} title="copy"> <MdContentCopy style={{ fontSize: "1rem" }} /></Button>
