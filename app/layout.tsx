@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
 import { Providers } from './Utils/Redux/provider';
 import NavBar from "./Components/navBar/navBar";
+import Loader from "./Utils/Services/Loader/Loader";
 import { App as AntdApp, ConfigProvider } from 'antd';
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +20,9 @@ export default function RootLayout({
       <body>
         <Providers>
           <AntdApp>
+            <Loader />
             <NavBar />
+            
             {children}
           </AntdApp>
         </Providers>

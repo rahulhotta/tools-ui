@@ -4,10 +4,10 @@ import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
 import { Col, Row } from 'antd';
 import Link from 'next/link';
 import * as LuIcons from 'react-icons/lu';
+import * as PiIcons from 'react-icons/pi';
 import * as FaIcons from 'react-icons/fa';
 import * as MdIcons from 'react-icons/md';
 import * as AiIcons from 'react-icons/ai';
-import * as PiIcons from 'react-icons/pi';
 import Landing_page_card from '@/app/Utils/CommonElements/landing_page_card/Landing_page_card';
 import FeaturesJson from '../../../public/Jsons/HomeFeatures.json'
 const LandingPage = () => {
@@ -53,7 +53,7 @@ const LandingPage = () => {
                 lg={{ span: 16 }} className='parent_card'>
                 <CommonCard >
                   <div className='child_folder'>
-                    <h2>{feature?.name}</h2>
+                    <h2 className='feature_name'>{feature?.name}</h2>
                     <div className='child_card_container'>
                       {
                         feature.children.map((childFeature: any) => {
