@@ -9,6 +9,7 @@ import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
 import { MdContentCopy } from "react-icons/md";
 import toast, { Toaster } from 'react-hot-toast';
 import {ServiceUtils} from '../../../Utils/Services/httpLayer'
+import { Alert } from 'antd';
 const page = () => {
   const [shortenedURL, setShortenedURL] = useState('');
   const randomAPICall = (inputJson:any) => {
@@ -119,6 +120,7 @@ const page = () => {
               </Tooltip>
             </Space.Compact>
           </div>
+             {shortenedURL && <Alert message="Copy the generated url before leaving or you will lose it!" banner />} 
         </CommonCard>
       </div>
     </div>

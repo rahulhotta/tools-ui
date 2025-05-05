@@ -2,7 +2,7 @@
     "features": [
       {
         "groupId": 1,
-        "name": "Images",
+        "name": "Image Tools",
         "children": [
           {
             "childId": 1,
@@ -26,7 +26,7 @@
       },
       {
         "groupId": 2,
-        "name": "Links",
+        "name": "Other Tools",
         "children": [
           {
             "childId": 1,
