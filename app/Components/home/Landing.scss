@@ -1,3 +1,4 @@
+@use '../../variables.scss' as vars;
 .landing_page_container {
   background-image: url("../../../public/Images/cornered-stairs.svg");
   background-size: cover;
@@ -13,9 +14,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(67, 67, 67);
+    color: vars.$secondary_color;
     padding: 10px 1rem;
-    padding-top: 10vh;
+    padding-top: 50px !important;
     font-size: 1.3rem;
   }
   .landing_page_features{
@@ -30,6 +31,9 @@
   }
   .child_folder{
     padding: 20px;
+    .feature_name{
+      color: vars.$secondary_color;
+    }
   }
   .child_card_container{
     display: flex;

@@ -1,3 +1,5 @@
+@use '../../variables.scss' as vars;
+
 .nav_bar_container{
     position: fixed;
     width: 100vw;
@@ -12,6 +14,7 @@
     color: black;
     text-decoration: none;
 }
-h4{
+.nav_bar_logo{
     font-size: 1.2rem;
+    color: vars.$secondary_color;
 }

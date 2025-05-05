@@ -9,7 +9,7 @@ function NavBar() {
     <div className='nav_bar_container'>
       <CommonCard>
         <Link href={"/"} className='nav_bar' prefetch={true}>
-          <h4>
+          <h4 className='nav_bar_logo'>
             Little Tools
           </h4>
         </Link>

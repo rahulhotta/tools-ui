@@ -1,5 +1,5 @@
 'use client'
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import type { FormProps } from 'antd';
 import { Space, Form, Input, Radio, Tooltip, message } from 'antd';
 import './url-shortener.scss';
@@ -10,16 +10,19 @@ import { MdContentCopy } from "react-icons/md";
 import toast, { Toaster } from 'react-hot-toast';
 import {ServiceUtils} from '../../../Utils/Services/httpLayer'
 const page = () => {
-
+  const [shortenedURL, setShortenedURL] = useState('');
   const randomAPICall = (inputJson:any) => {
     try{
       let payload = {
         "main_url": inputJson['URL'],
         "expire_in_days": inputJson['expiry_date']
       }
-      ServiceUtils.postRequest("/s/submit_url",payload,true).then((_response:any) => {
-        if (_response && _response.status === 200) {
-          console.log(_response)
+      ServiceUtils.postRequest("/s/submit_url",payload,true).then((response:any) => {
+        if (response && response.status === 'success') {
+          toast.success(response.message)
+          setShortenedURL(response?.short_url)
+        }else{
+          toast.error(response?.message ? response.message : 'Something went wrong!')
         }
       })
     }catch(error){
@@ -31,7 +34,7 @@ const page = () => {
     const inputValue = inputRef.current?.input?.value;
 
     if (!inputValue) {
-      toast.error('Please enter some text');
+      toast.error('Please Generate a URL first!');
       return;
     }
 
@@ -109,7 +112,7 @@ const page = () => {
         <CommonCard>
           <div className='copy_container'>
             <Space.Compact style={{ width: '100%' }}>
-              <Input className='copy_input' placeholder='Copy URL' disabled  defaultValue={'hello'} ref={inputRef}/>
+              <Input className='copy_input' placeholder='Copy URL' disabled  value={shortenedURL} ref={inputRef}/>
 
               <Tooltip placement="top" title={'Copy'}>
                 <Button onClick={handleCopy} title="copy"> <MdContentCopy style={{ fontSize: "1rem" }} /></Button>
