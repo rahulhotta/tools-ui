@@ -17,7 +17,7 @@ const page = () => {
         "main_url": inputJson['URL'],
         "expire_in_days": inputJson['expiry_date']
       }
-      ServiceUtils.postRequest("/s/submit_url",payload).then((_response:any) => {
+      ServiceUtils.postRequest("/s/submit_url",payload,true).then((_response:any) => {
         if (_response && _response.status === 200) {
           console.log(_response)
         }
