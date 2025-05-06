@@ -18,7 +18,7 @@ const page = () => {
         "main_url": inputJson['URL'],
         "expire_in_days": inputJson['expiry_date']
       }
-      ServiceUtils.postRequest("/s/submit_url",payload,true).then((response:any) => {
+      ServiceUtils.postRequest("/submit_url",payload,true).then((response:any) => {
         if (response && response.status === 'success') {
           toast.success(response.message)
           setShortenedURL(response?.short_url)
