@@ -6,6 +6,7 @@ import { log } from 'node:console';
 import { Select } from 'antd';
 import { Checkbox, Form, Input } from 'antd';
 import CommonCard from '@/app/Utils/CommonElements/Card/CommonCard';
+import ConvertableExtensions from '../../../../public/Jsons/ConvertableExtensions.json'
 interface ExtensionSelectorProps {
     image: any;
     preview: any;
@@ -13,32 +14,7 @@ interface ExtensionSelectorProps {
 }
 const ExtensionSelector: React.FC<ExtensionSelectorProps> = ({ image, setImage, preview }) => {
 
-    const convertableExtensions = [
-        {
-            label: 'PNG',
-            value: 'png',
-        },
-        {
-            label: 'JPG',
-            value: 'jpg',
-        },
-        {
-            label: 'JPEG',
-            value: 'jpeg',
-        },
-        {
-            label: 'WebP',
-            value: 'webp',
-        },
-        {
-            label: 'GIF',
-            value: 'gif',
-        },
-        {
-            label: 'SVG',
-            value: 'svg',
-        },
-    ]
+    const convertableExtensions = ConvertableExtensions
     const [fileSizeInMB, setFileSizeInMB] = useState('0');
     const [selectedExtension, setSelectedExtension] = useState(null)
 

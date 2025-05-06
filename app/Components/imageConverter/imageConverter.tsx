@@ -7,14 +7,25 @@ import { Col, Row } from 'antd';
 import { useDropzone } from 'react-dropzone';
 import DragDropArea from './dragDropArea/dragDropArea';
 import ExtensionSelector from './ExtensionSelector/extensionSelector';
-
+import ConvertableExtensions from '../../../public/Jsons/ConvertableExtensions.json'
+import toast from 'react-hot-toast';
 function ImageConverter() {
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
-    console.log('image', image)
+
+    const allowedExtensions = ConvertableExtensions.map((extension)=>{
+        return extension.value
+    })
+
     const handleImageChange = (event: any) => {
         const file = event.target.files[0];
 
+        const fileExtension =  file.name.split('.').pop().toLowerCase();
+
+        if (!allowedExtensions.includes(fileExtension)) {
+          toast.error("This image type is not allowed!")
+          return;
+        }
         const reader: any = new FileReader();
         reader.onload = () => {
             setPreview(reader.result);
