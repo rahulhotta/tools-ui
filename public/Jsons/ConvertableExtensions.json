@@ -18,6 +18,10 @@
     {
       "label": "GIF",
       "value": "gif"
+    },
+    {
+      "label": "AVIF",
+      "value": "avif"
     }
   ]
   
