@@ -53,6 +53,7 @@ const LandingPage = () => {
                 lg={{ span: 16 }} className='parent_card'>
                 <CommonCard >
                   <div className='child_folder'>
+                  
                     <h2 className='feature_name'>{feature?.name}</h2>
                     <div className='child_card_container'>
                       {

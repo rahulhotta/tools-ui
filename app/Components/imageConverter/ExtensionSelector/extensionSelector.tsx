@@ -15,6 +15,7 @@ interface ExtensionSelectorProps {
 const ExtensionSelector: React.FC<ExtensionSelectorProps> = ({ image, setImage, preview }) => {
 
     const convertableExtensions = ConvertableExtensions
+
     const [fileSizeInMB, setFileSizeInMB] = useState('0');
     const [selectedExtension, setSelectedExtension] = useState(null)
 
