@@ -9,6 +9,8 @@ import DragDropArea from './dragDropArea/dragDropArea';
 import ExtensionSelector from './ExtensionSelector/extensionSelector';
 import ConvertableExtensions from '../../../public/Jsons/ConvertableExtensions.json'
 import toast from 'react-hot-toast';
+import { Player } from '@lottiefiles/react-lottie-player'
+// import successAnimation from 'public/Animations/success.lottie'
 function ImageConverter() {
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
@@ -37,7 +39,12 @@ function ImageConverter() {
     const onDrop = useCallback((acceptedFiles: any) => {
         acceptedFiles.forEach((file: any) => {
             const reader: any = new FileReader();
+            const fileExtension =  file.name.split('.').pop().toLowerCase();
 
+            if (!allowedExtensions.includes(fileExtension)) {
+            toast.error("This image type is not allowed!")
+            return;
+            }
             reader.onload = () => {
                 const fileContent = reader.result;
                 console.log('File content (data URL):', fileContent);
@@ -77,6 +84,12 @@ function ImageConverter() {
                             <ExtensionSelector image={image} setImage={setImage} preview={preview} />
                         )
                     }
+                    <Player
+                    autoplay
+                    loop
+                    src='../../../public/Animations/success.lottie'
+                    style={{ height: '300px', width: '300px' }}
+                    />
                 </Col>
             </Row>
         </div>

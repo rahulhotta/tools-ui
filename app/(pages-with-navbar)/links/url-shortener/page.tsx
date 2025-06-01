@@ -85,7 +85,7 @@ const page = () => {
               name="URL"
               rules={[{ required: true, message: 'Please Enter your URL!' }]}
             >
-              <Input placeholder='Enter your URL' className='form_input' />
+              <Input placeholder='Enter your URL' className='form_input custom_input' />
             </Form.Item>
 
             <Form.Item<FieldType>
@@ -113,7 +113,7 @@ const page = () => {
         <CommonCard>
           <div className='copy_container'>
             <Space.Compact style={{ width: '100%' }}>
-              <Input className='copy_input' placeholder='Copy URL' disabled  value={shortenedURL} ref={inputRef}/>
+              <Input className='copy_input custom_input' placeholder='Copy URL' disabled  value={shortenedURL} ref={inputRef}/>
 
               <Tooltip placement="top" title={'Copy'}>
                 <Button onClick={handleCopy} title="copy"> <MdContentCopy style={{ fontSize: "1rem" }} /></Button>
