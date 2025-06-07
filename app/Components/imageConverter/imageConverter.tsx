@@ -9,7 +9,6 @@ import DragDropArea from './dragDropArea/dragDropArea';
 import ExtensionSelector from './ExtensionSelector/extensionSelector';
 import ConvertableExtensions from '../../../public/Jsons/ConvertableExtensions.json'
 import toast from 'react-hot-toast';
-import { Player } from '@lottiefiles/react-lottie-player'
 // import successAnimation from 'public/Animations/success.lottie'
 function ImageConverter() {
     const [image, setImage] = useState(null);
@@ -84,12 +83,7 @@ function ImageConverter() {
                             <ExtensionSelector image={image} setImage={setImage} preview={preview} />
                         )
                     }
-                    <Player
-                    autoplay
-                    loop
-                    src='../../../public/Animations/success.lottie'
-                    style={{ height: '300px', width: '300px' }}
-                    />
+                   
                 </Col>
             </Row>
         </div>
